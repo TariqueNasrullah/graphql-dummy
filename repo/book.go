@@ -7,18 +7,18 @@ import (
 )
 
 type Book struct {
-	db  infra.DB
+	db         infra.DB
 	collection string
-	ctx context.Context
-	log logger.StructLogger
+	ctx        context.Context
+	log        logger.StructLogger
 }
 
 func NewBook(ctx context.Context, db infra.DB, collection string, lgr logger.StructLogger) *Book {
 	return &Book{
-		ctx: ctx,
-		db:  db,
+		ctx:        ctx,
+		db:         db,
 		collection: collection,
-		log: lgr,
+		log:        lgr,
 	}
 }
 

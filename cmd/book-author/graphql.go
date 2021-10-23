@@ -196,5 +196,3 @@ func getAddressFromHostAndPort(host string, port int) string {
 	}
 	return addr
 }
-
-

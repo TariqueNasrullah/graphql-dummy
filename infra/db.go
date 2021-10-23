@@ -6,10 +6,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"time"
 )
+
 // temp DB interface
 
 type DB interface {
-
 }
 
 // <------------------------------------arango----------------------------------->
@@ -17,7 +17,7 @@ type DB interface {
 // DB interface wraps the database
 
 //type DB interface {
-//	Query(ctx context.Context, query string, bindVars map[string]interface{}) (driver.Cursor, error)
+//	//Query(ctx context.Context, query string, bindVars map[string]interface{}) (driver.Cursor, error)
 //	ReadDocument(ctx context.Context, collectionName, key string, result interface{}) error
 //	ReadDocuments(ctx context.Context, collectionName string, key []string, results interface{}) error
 //	CreateDocument(ctx context.Context, colName string, doc interface{}) error
