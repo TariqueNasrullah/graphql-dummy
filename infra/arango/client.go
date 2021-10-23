@@ -78,6 +78,18 @@ func (d *Arango) CreateDocument(ctx context.Context, colName string, doc interfa
 	return err
 }
 
+func (d *Arango) UpdateDocument(ctx context.Context, colName string, key string, doc interface{}) error {
+	col, err := d.database.Collection(ctx, colName)
+	if IsNotFound(err) != nil {
+		return err
+	}
+	_, err = col.UpdateDocument(ctx, key, doc)
+	if err != nil {
+		return err
+	}
+	return err
+}
+
 func (d *Arango) CreateDocuments(ctx context.Context, colName string, docs interface{}) error {
 	col, err := d.database.Collection(ctx, colName)
 	if IsNotFound(err) != nil {

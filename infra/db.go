@@ -22,6 +22,7 @@ type DB interface {
 	ReadDocuments(ctx context.Context, collectionName string, key []string, results interface{}) error
 	CreateDocument(ctx context.Context, colName string, doc interface{}) error
 	CreateDocuments(ctx context.Context, colName string, docs interface{}) error
+	UpdateDocument(ctx context.Context, colName string, key string, doc interface{}) error
 	Query(ctx context.Context, query string, binVars map[string]interface{}) (interface{}, error)
 }
 
