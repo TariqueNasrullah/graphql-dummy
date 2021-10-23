@@ -6,15 +6,15 @@ import (
 	"github.com/suaas21/graphql-dummy/logger"
 )
 
-type Book struct {
+type BookRepository struct {
 	db         infra.DB
 	collection string
 	ctx        context.Context
 	log        logger.StructLogger
 }
 
-func NewBook(ctx context.Context, db infra.DB, collection string, lgr logger.StructLogger) *Book {
-	return &Book{
+func NewBook(ctx context.Context, db infra.DB, collection string, lgr logger.StructLogger) *BookRepository {
+	return &BookRepository{
 		ctx:        ctx,
 		db:         db,
 		collection: collection,
