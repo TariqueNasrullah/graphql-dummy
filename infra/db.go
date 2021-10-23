@@ -1,6 +1,7 @@
 package infra
 
 import (
+	"context"
 	// "github.com/arangodb/go-driver"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -9,21 +10,20 @@ import (
 
 // temp DB interface
 
-type DB interface {
-}
+//type DB interface {
+//}
 
 // <------------------------------------arango----------------------------------->
 
 // DB interface wraps the database
-
-//type DB interface {
-//	//Query(ctx context.Context, query string, bindVars map[string]interface{}) (driver.Cursor, error)
-//	ReadDocument(ctx context.Context, collectionName, key string, result interface{}) error
-//	ReadDocuments(ctx context.Context, collectionName string, key []string, results interface{}) error
-//	CreateDocument(ctx context.Context, colName string, doc interface{}) error
-//	CreateDocuments(ctx context.Context, colName string, docs interface{}) error
-//	Query(ctx context.Context, query string, binVars map[string]interface{}) (interface{}, error)
-//}
+type DB interface {
+	//Query(ctx context.Context, query string, bindVars map[string]interface{}) (driver.Cursor, error)
+	ReadDocument(ctx context.Context, collectionName, key string, result interface{}) error
+	ReadDocuments(ctx context.Context, collectionName string, key []string, results interface{}) error
+	CreateDocument(ctx context.Context, colName string, doc interface{}) error
+	CreateDocuments(ctx context.Context, colName string, docs interface{}) error
+	Query(ctx context.Context, query string, binVars map[string]interface{}) (interface{}, error)
+}
 
 // <------------------------------------mongo----------------------------------->
 
